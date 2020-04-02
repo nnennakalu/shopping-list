@@ -75,8 +75,11 @@ p {
   transition: color 0.3s;
   margin-left: -20px;
 }
+.addItem-input input[type="text"]::placeholder {
+	color: #c3c3c3;;
+}
 .addItem-input input[type="text"]:focus {
-  border-bottom: 1px solid #ff4500;
+	border-bottom: 1px solid #ff4500;
 }
 .addItem-input i:hover,
 .addItem-input input[type="text"]:focus + i {
@@ -112,35 +115,20 @@ p {
   animation: pulse 0.4s ease forwards;
   overflow: hidden;
 }
-.list-item label:hover {
-  background-color: rgba(166, 166, 166, 0.3);
+
+.list-item .done {
+	color: rgba(166, 166, 166, 0.3);
+	text-decoration: line-through;
 }
-.list-item .check__box {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 20px;
-  height: 20px;
-  border: 2px solid #34495e;
-  border-radius: 2px;
-}
+
 .icon-trash {
   cursor: pointer;
-  color: #ff7878;
+  color: rgba(166, 166, 166, 0.3);
 }
 .icon-trash:hover {
-  color: #f54c4c;
+  color: #ff4500;
 }
-.list-item > input[type="checkbox"] + label .check__pointer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  font-size: 20px;
-  color: #34495e;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.3s cubic-bezier(0.3, 0, 0, 1.5);
-}
+
 .list-item > input[type="checkbox"]:checked + label .check__box {
   border: none;
 }
