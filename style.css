@@ -20,6 +20,10 @@ body {
 	color: var(--body-text-color);
 }
 
+ul {
+	list-style: none;
+}
+
 h1 {
   margin: 0 auto;
   color: var(--ascent-color);
