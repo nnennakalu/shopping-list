@@ -7,10 +7,24 @@ function inputLength() {
 }
 
 function createListElement() {
-	var li = document.createElement("li");
-	li.appendChild(document.createTextNode(input.value));
-	ul.appendChild(li);
-	input.value = "";
+	var content = document.createElement("label");
+  content.appendChild(document.createTextNode(input.value));
+
+  var checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+
+  var trashIcon = document.createElement("i");
+  trashIcon.setAttribute("class", "fa fa-trash icon-trash");
+
+	var item = document.createElement("li");
+	item.setAttribute("class", "list-item");
+  item.appendChild(checkbox);
+  item.appendChild(content);
+  item.appendChild(trashIcon);
+
+  ul.appendChild(item);
+
+  input.value = "";
 }
 
 function addListAfterClick() {
@@ -24,6 +38,8 @@ function addListAfterKeypress(event) {
 		createListElement();
 	}
 }
+
+
 
 button.addEventListener("click", addListAfterClick);
 
