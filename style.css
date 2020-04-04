@@ -95,12 +95,6 @@ p {
 	margin: 20px 0px;
 }
 
-.list-item.invisible {
-  display: none;
-}
-/* .list-item > input[type="checkbox"] {
-  display: none;
-} */
 .list-item label {
   position: relative;
   max-width: 70%;

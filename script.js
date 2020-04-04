@@ -1,6 +1,8 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
+var checked = document.getElementById("checked");
+var text = document.getElementById('text');
 
 function inputLength() {
 	return input.value.length;
@@ -8,6 +10,7 @@ function inputLength() {
 
 function createListElement() {
 	var content = document.createElement("label");
+	content.setAttribute("id", "text");
   content.appendChild(document.createTextNode(input.value));
 
   var checkbox = document.createElement("input");
@@ -39,8 +42,17 @@ function addListAfterKeypress(event) {
 	}
 }
 
+function toggleDone(event) {
+  if (text.hasAttribute("class")) {
+    text.removeAttribute("class");
+  } else {
+    text.setAttribute("class", "done");
+  }
+}
 
 
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
+
+checked.addEventListener("click", toggleDone);
