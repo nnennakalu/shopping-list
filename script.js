@@ -41,21 +41,25 @@ function addListAfterKeypress(event) {
 }
 
 function toggleDone(event) {
-  var target = event.target;
-	var sibling = target.nextElementSibling;
-	var checkTarget = sibling.tagName;
-	console.log(checkTarget);
-	console.log(sibling);
+	var clickTarget1 = event.target;
+	console.log(clickTarget1.tagName);
 	
 
-  if (checkTarget === 'LABEL' && sibling.hasAttribute("class")) {
-    sibling.removeAttribute("class");
-  } else if (checkTarget === 'LABEL') {
-    sibling.setAttribute("class", "done");
+  if (clickTarget1.tagName === "INPUT") {
+		var sibling = clickTarget1.nextElementSibling;
+		console.log(sibling);
+		
+    if (sibling.hasAttribute("class")) {
+      sibling.removeAttribute("class");
+    } else {
+      sibling.setAttribute("class", "done");
+    }
   }
 }
 
-
+function deleteItem(event) {
+	var clickTarget2;
+}
 
 button.addEventListener("click", addListAfterClick);
 
