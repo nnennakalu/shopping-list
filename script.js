@@ -42,11 +42,15 @@ function addListAfterKeypress(event) {
 
 function toggleDone(event) {
   var target = event.target;
-  var sibling = target.nextElementSibling;
+	var sibling = target.nextElementSibling;
+	var checkTarget = sibling.tagName;
+	console.log(checkTarget);
+	console.log(sibling);
+	
 
-  if (sibling.hasAttribute("class")) {
+  if (checkTarget === 'LABEL' && sibling.hasAttribute("class")) {
     sibling.removeAttribute("class");
-  } else {
+  } else if (checkTarget === 'LABEL') {
     sibling.setAttribute("class", "done");
   }
 }
