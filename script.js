@@ -41,14 +41,13 @@ function addListAfterKeypress(event) {
 }
 
 function toggleDone(event) {
-	var clickTarget1 = event.target;
-	console.log(clickTarget1.tagName);
-	
+  var clickTarget1 = event.target;
+  console.log(clickTarget1.tagName);
 
   if (clickTarget1.tagName === "INPUT") {
-		var sibling = clickTarget1.nextElementSibling;
-		console.log(sibling);
-		
+    var sibling = clickTarget1.nextElementSibling;
+    console.log(sibling);
+
     if (sibling.hasAttribute("class")) {
       sibling.removeAttribute("class");
     } else {
@@ -58,7 +57,17 @@ function toggleDone(event) {
 }
 
 function deleteItem(event) {
-	var clickTarget2;
+  var clickTarget2 = event.target;
+	
+  if (clickTarget2.tagName === "I") {
+		console.log(clickTarget2.tagName);
+    var targetParent = clickTarget2.parentNode;
+    console.log(targetParent);
+    var targetGrandParent = clickTarget2.parentNode.parentNode;
+    console.log(targetGrandParent);
+
+    targetGrandParent.removeChild(targetParent);
+  }
 }
 
 button.addEventListener("click", addListAfterClick);
@@ -66,3 +75,5 @@ button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
 
 ul.addEventListener("click", toggleDone);
+
+ul.addEventListener("click", deleteItem);
