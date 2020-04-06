@@ -10,7 +10,7 @@
 }
 html {
   font-size: 1.125rem;
-  font-family: montserrat;
+  font-family: montserrat, Arial, Helvetica, sans-serif;
 }
 body {
   margin: 0;
@@ -38,7 +38,7 @@ p {
   padding-bottom: 2.5rem;
 }
 
-.todo-wrapper {
+.list-wrapper {
   margin: 0 auto;
   padding: 1.25rem 0;
   width: 100%;
@@ -50,8 +50,7 @@ p {
   box-shadow: 0 7px 30px rgba(67, 70, 77, 0.3);
 }
 
-.todo-content,
-.todo__list {
+.list-content {
   padding-left: 20px;
   padding-right: 30px;
 }
@@ -123,6 +122,10 @@ p {
   color: #ff4500;
 }
 
+i {
+	padding: 5px 0px;
+}
+
 .list-item > input[type="checkbox"]:checked + label .check__box {
   border: none;
 }
@@ -131,6 +134,10 @@ p {
 }
 .list-item > input[type="checkbox"]:checked + label .item__title {
   color: #c7c7c7;
+}
+
+.list-item > input[type="checkbox"] {
+	margin: 5px 0px;
 }
 
 @keyframes pulse {
@@ -145,10 +152,4 @@ p {
   }
 }
 
-i {
-	padding: 5px 0px;
-}
 
-.list-item > input[type="checkbox"] {
-	margin: 5px 0px;
-}
